@@ -2,11 +2,7 @@
 # Reproducible Research: Peer Assessment 1 
 # Activity Monitoring on Personal Movement
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
+
     
 ## Loading and preprocessing the data
 
