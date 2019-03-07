@@ -46,9 +46,7 @@ str(actv)
 ```r
 totStep <- aggregate(actv[c("steps")], 
                          list(date = actv$date), sum ,na.rm=T)
-
-hist(totStep$steps,xlab="total steps",ylab="Freqency",main="total steps per day",
-     col="blue" )
+hist(totStep$steps,xlab="total steps",ylab="Freqency",main="total steps per day",col="blue")
 ```
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
@@ -83,7 +81,7 @@ print(c("the median of total number of steps is",medianStep))
 
 ```r
 avgStepInterval <- aggregate(actv[c("steps")], list(interval=actv$interval),FUN=mean,na.rm=T)
-plot(avgStepInterval,xlab="5-minute interval",ylab="average steps", type="l")
+plot(avgStepInterval,xlab="5-minute interval",ylab="average steps",type="l")
 ```
 
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
@@ -152,17 +150,12 @@ print(c("after adjustment rows of missing data",rowMiss))
 ## What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
 ```r
-totStep1 <- aggregate(actv1[c("steps")], 
-                         list(date = actv$date), sum ,na.rm=T)
+totStep1 <- aggregate(actv1[c("steps")],list(date = actv$date), sum ,na.rm=T)
 
 par(mfrow=c(1,2))
-hist(totStep$steps,xlab="total steps each day",ylab="Freqency",
-    main="with missing value",
-     col="blue"  )
+hist(totStep$steps,xlab="total steps each day",ylab="Freqency",main="with missing value",col="blue")
 
-hist(totStep1$steps,xlab="total steps each day",ylab="Freqency",
-     main="after adjust missing value",
-     col="blue" )
+hist(totStep1$steps,xlab="total steps each day",ylab="Freqency",main="after adjust missing value",col="blue")
 ```
 
 ![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png)
@@ -234,8 +227,7 @@ actv1[,"weekdg"] <-factor(actv1[,"weekdg"])
                              FUN=mean, na.rm=T)
 
 library(lattice)
-xyplot(steps ~ interval | daytype, data=avgStepInterval1, layout=c(1,2), 
-       type="l", ylab = "average steps")
+xyplot(steps ~ interval | daytype, data=avgStepInterval1,layout=c(1,2), type="l",ylab = "average steps")
 ```
 
 ![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png)
